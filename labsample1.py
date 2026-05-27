@@ -27,10 +27,11 @@ def get_longest_workout(workouts):
     print("=" * 50)
     print(f"{'Date':<15} {'Activity':<20} {'Duration (min)':<15}")
     print("-" * 50)
-    
-    if workouts['duration'] > max_duration:
-        max_duration = workouts['duration']
-        longest = workouts
+    for time in workouts:
+        
+        if time['duration'] > max_duration:
+            max_duration = time['duration']
+            longest = time
 
     if longest:
         print(f"Longest workout: {longest['date']} {longest['activity']} {longest['duration']}")
@@ -54,7 +55,8 @@ def calc_total_duration(workouts):
 
     # Add your implementation from here
     #HINT: start with this code: for workout in workouts:
-
+    for workout in workouts:
+        total += workout['duration']
 
     return total
 
@@ -68,10 +70,11 @@ def calc_total_duration(workouts):
 ##################################################################
 def calc_average_duration(workouts):
     average = 0
-
+    total = 0
     # Add your implementation from here
     #HINT: Use calc_total_duration(workouts) and len(workouts)
-
+    total = calc_total_duration(workouts)
+    average = total / len(workouts)
 
     return average
 
