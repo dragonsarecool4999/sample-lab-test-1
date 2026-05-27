@@ -35,6 +35,7 @@ def get_longest_workout(workouts):
 
     if longest:
         print(f"Longest workout: {longest['date']} {longest['activity']} {longest['duration']}")
+        return longest
 
     print("=" * 50)
 
@@ -75,7 +76,7 @@ def calc_average_duration(workouts):
     #HINT: Use calc_total_duration(workouts) and len(workouts)
     total = calc_total_duration(workouts)
     average = total / len(workouts)
-
+    
     return average
 
 #--------- End of Functions to be implemented for Practice Lab 1 -----------------------
